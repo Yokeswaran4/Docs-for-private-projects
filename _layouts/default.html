@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <title>{{ page.title | default: site.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <style>
+      .page-header .site-nav {
+        margin-top: 1.2rem;
+      }
+      .page-header .site-nav a {
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0 12px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+      .page-header .site-nav a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
@@ -17,9 +36,11 @@
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description }}</h2>
-      <a href="{{ '/' | relative_url }}" class="btn">Home</a>
-      <a href="{{ '/terms-of-service.html' | relative_url }}" class="btn">Terms of Service</a>
-      <a href="{{ '/privacy-policy.html' | relative_url }}" class="btn">Privacy Policy</a>
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/terms-of-service.html' | relative_url }}">Terms of Service</a>
+        <a href="{{ '/privacy-policy.html' | relative_url }}">Privacy Policy</a>
+      </nav>
     </header>
 
     <main id="content" class="main-content" role="main">
